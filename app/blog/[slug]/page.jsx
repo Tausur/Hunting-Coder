@@ -19,8 +19,8 @@ export default function Blog({ params }) {
     document.title = "Home: The Hunting Coder"
     const databases = new Databases(client)
     let promise = databases.listDocuments(
-      "648c86d17456ab55cd59",
-      "648c86e84b865b5718f2",
+      process.env.NEXT_PUBLIC_DATABASE,
+      process.env.NEXT_PUBLIC_BLOG_COLLECTION,
       [
         Query.equal('slug', slug)
       ]
