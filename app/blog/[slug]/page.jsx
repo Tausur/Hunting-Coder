@@ -7,8 +7,8 @@ import { useState, useEffect } from 'react';
 const client = new Client();
 
 client
-  .setEndpoint('https://cloud.appwrite.io/v1')
-  .setProject('648c81c007d2778a4df7');
+  .setEndpoint(process.env.NEXT_PUBLIC_ENDPOINT)
+  .setProject(process.env.NEXT_PUBLIC_PROJECT);
 
 export default function Blog({ params }) {
 
