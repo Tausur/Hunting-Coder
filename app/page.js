@@ -31,7 +31,7 @@ export default function Home() {
     <div>
       <div className="max-w-6xl mx-auto p-4 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
       {blogPosts.map((post, index) => (
-        <div key={index} className="bg-white p-4 rounded-lg shadow">
+        <div key={index} className="bg-zinc-200 p-4 rounded-lg shadow">
           <Image
             src={post.image}
             alt={post.title}
@@ -41,7 +41,7 @@ export default function Home() {
           />
           <h2 className="text-xl font-bold mb-2">{post.title}</h2>
           <p className="text-gray-700 pb-3">{post.metadesc}...</p>
-          <Link href={`/blog/${post.slug}`} className="my-4 bg-sky-500 font-semibold rounded-lg px-3 py-1 text-white">Read more
+          <Link href={`/blog/${post.slug}`} className="my-4 bg-sky-500 font-semibold rounded-lg px-3 py-1 text-white hover:bg-sky-600 duration-200">Read more
           </Link>
         </div>
       ))}
