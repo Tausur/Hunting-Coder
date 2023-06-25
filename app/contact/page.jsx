@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { useState } from "react";
 import { Client, Databases, ID } from "appwrite";
 
@@ -44,13 +43,8 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12 bg-[url('/contact_bg.jpg')] bg-no-repeat bg-cover">
-      <Head>
-        <title>Contact - Hunting Coder</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div className="relative  sm:max-w-xl sm:mx-auto">
+    <div className="min-h-screen bg-gray-100 flex flex-col justify-center sm:py-12 bg-gradient-to-r from-slate-900 via-zinc-400 to-zinc-900">
+      <div className="relative sm:max-w-xl sm:mx-auto md:w-1/3">
         <div className="relative px-4 py-3 bg-white mx-5 md:mx-0 shadow rounded-3xl sm:p-10">
           <div className="max-w-md mx-auto">
             <div className="text-center">
@@ -60,11 +54,11 @@ const ContactPage = () => {
               </p>
             </div>
             <div className="my-1 mx-3">
-              <form onSubmit={handleSubmit} className="contact-form">
+              <form onSubmit={handleSubmit} className="contact-form shadow-xl">
                 <div className="mb-4">
                   <label
                     htmlFor="name"
-                    className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                    className="block mb-1 text-sm text-gray-600 dark:text-gray-400"
                   >
                     Name
                   </label>
@@ -78,7 +72,7 @@ const ContactPage = () => {
                     placeholder="Your name"
                   />
                 </div>
-                <div className="mb-6">
+                <div className="mb-4">
                   <label
                     htmlFor="email"
                     className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
@@ -95,7 +89,7 @@ const ContactPage = () => {
                     placeholder="Your email address"
                   />
                 </div>
-                <div className="mb-6">
+                <div className="mb-4">
                   <label
                     htmlFor="message"
                     className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
@@ -115,7 +109,7 @@ const ContactPage = () => {
                 <div className="">
                   <button
                     type="submit"
-                    className="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none"
+                    className="w-full px-3 py-4 text-white duration-300 bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none"
                   >
                     Send Message
                   </button>
