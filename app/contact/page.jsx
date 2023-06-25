@@ -1,17 +1,46 @@
-'use client'
+"use client";
 
-import Head from 'next/head';
-import { useState } from 'react';
+import Head from "next/head";
+import { useState } from "react";
+import { Client, Databases, ID } from "appwrite";
+
+const client = new Client();
+
+client
+  .setEndpoint(process.env.NEXT_PUBLIC_ENDPOINT)
+  .setProject(process.env.NEXT_PUBLIC_PROJECT);
 
 const ContactPage = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const databases = new Databases(client);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    // You can use a library like Axios or fetch to send the form data to a server
+    const promise = databases.createDocument(
+      process.env.NEXT_PUBLIC_FEEDBACK_DATABASE_ID,
+      process.env.NEXT_PUBLIC_FEEDBACK_COLLECTION_ID,
+      ID.unique(),
+      {
+        name: name,
+        email: email,
+        message: message,
+      }
+    );
+
+    promise.then(
+      function (response) {
+        alert("Thanks for your contacting with us. Stay tuned!");
+      },
+      function (error) {
+        console.log(error); // Failure
+      }
+    );
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
@@ -22,16 +51,21 @@ const ContactPage = () => {
       </Head>
 
       <div className="relative  sm:max-w-xl sm:mx-auto">
-        <div className="relative px-4 py-3 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
+        <div className="relative px-4 py-3 bg-white mx-5 md:mx-0 shadow rounded-3xl sm:p-10">
           <div className="max-w-md mx-auto">
             <div className="text-center">
               <h1 className="text-xl font-medium">Contact Us</h1>
-              <p className="mt-2 text-sm text-gray-500">Get in touch with the Hunting Coder team</p>
+              <p className="mt-2 text-sm text-gray-500">
+                Get in touch with the Hunting Coder team
+              </p>
             </div>
             <div className="my-1 mx-3">
               <form onSubmit={handleSubmit} className="contact-form">
                 <div className="mb-4">
-                  <label htmlFor="name" className="block mb-2 text-sm text-gray-600 dark:text-gray-400">
+                  <label
+                    htmlFor="name"
+                    className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                  >
                     Name
                   </label>
                   <input
@@ -45,7 +79,10 @@ const ContactPage = () => {
                   />
                 </div>
                 <div className="mb-6">
-                  <label htmlFor="email" className="block mb-2 text-sm text-gray-600 dark:text-gray-400">
+                  <label
+                    htmlFor="email"
+                    className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                  >
                     Email Address
                   </label>
                   <input
@@ -59,7 +96,10 @@ const ContactPage = () => {
                   />
                 </div>
                 <div className="mb-6">
-                  <label htmlFor="message" className="block mb-2 text-sm text-gray-600 dark:text-gray-400">
+                  <label
+                    htmlFor="message"
+                    className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                  >
                     Message
                   </label>
                   <textarea
