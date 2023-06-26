@@ -35,7 +35,7 @@ export default function Blog({ params }) {
   return (
     <div>
       <div className="max-w-4xl mx-auto p-4">
-        <h2 className="md:text-3xl text-2xl font-bold mb-4 py-2">
+        <h2 className="md:text-3xl text-xl font-bold mb-4 py-2">
           {blogPost?.title}
         </h2>
         <img
