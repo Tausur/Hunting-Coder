@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
         <div className="fixed w-full">
           <Navbar />
         </div>
-        <div className="pt-16">{children}</div>
+        <div className="pt-16 bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-800">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
