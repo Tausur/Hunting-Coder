@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Client, Databases, ID } from "appwrite";
 import { useState, useEffect } from "react";
 import { BsFillCalendarEventFill } from "react-icons/bs";
+import HomePage from "@/components/Homepage";
 
 const client = new Client();
 
@@ -32,6 +33,9 @@ export default function Home() {
 
   return (
     <div>
+      <div>
+        <HomePage />
+      </div>
       <div className="max-w-6xl mx-auto p-4 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {blogPosts.map((post, index) => (
           <div key={index} className="bg-zinc-200 p-4 rounded-lg shadow">
