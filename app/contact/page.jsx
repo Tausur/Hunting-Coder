@@ -43,9 +43,9 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center sm:py-12 bg-gradient-to-r from-slate-900 via-zinc-400 to-zinc-900">
-      <div className="relative sm:max-w-xl sm:mx-auto md:w-1/3">
-        <div className="relative px-4 py-3 bg-white mx-5 md:mx-0 shadow rounded-3xl sm:p-10">
+    <div className="min-h-screen py-10 md:py-0 bg-gray-100 flex flex-col justify-center sm:py-12 bg-gradient-to-r from-zinc-900 via-zinc-500 to-zinc-800">
+      <div className="sm:max-w-xl sm:mx-auto md:w-1/3">
+        <div className="px-4 py-3 bg-white mx-5 md:mx-0 shadow rounded-3xl sm:p-10">
           <div className="max-w-md mx-auto">
             <div className="text-center">
               <h1 className="text-xl font-medium">Contact Us</h1>
