@@ -1,0 +1,46 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\legen\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @sendgrid/mail dotenv
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Neovim\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\bin;;C:\TDM-GCC-64\bin;C:\Users\legen\scoop\shims;C:\Users\legen\AppData\Local\Microsoft\WindowsApps;C:\Users\legen\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\legen\AppData\Roaming\npm;C:\Program Files\nodejs;C:\Users\legen\AppData\Local\Programs\oh-my-posh\bin;C:\Program Files\Git\bin;
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'D:\Code-PlayGround\NEXT JS\hunting-coder\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node'
+
+npm manifest: 
+  {
+    "name": "hunting-coder",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint"
+    },
+    "dependencies": {
+      "appwrite": "^11.0.0",
+      "autoprefixer": "10.4.14",
+      "next": "13.4.6",
+      "postcss": "8.4.24",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "react-icons": "^4.9.0",
+      "tailwindcss": "3.3.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

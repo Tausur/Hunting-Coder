@@ -16,7 +16,7 @@ const ContactPage = () => {
 
   const databases = new Databases(client);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     const promise = databases.createDocument(
       process.env.NEXT_PUBLIC_FEEDBACK_DATABASE_ID,
@@ -37,13 +37,20 @@ const ContactPage = () => {
         console.log(error); // Failure
       }
     );
+    await fetch('/api/feedback', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({name,email,message})
+    })
     setName("");
     setEmail("");
     setMessage("");
   };
 
   return (
-    <div className="min-h-screen py-10 md:py-0 bg-gray-100 flex flex-col justify-center sm:py-12 bg-gradient-to-r from-zinc-900 via-zinc-500 to-zinc-800">
+    <div className="min-h-screen py-10 md:py-0 bg-gray-100 flex flex-col justify-center sm:py-12 bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-800">
       <div className="sm:max-w-xl sm:mx-auto md:w-1/3">
         <div className="px-4 py-3 bg-white mx-5 md:mx-0 shadow rounded-3xl sm:p-10">
           <div className="max-w-md mx-auto">
