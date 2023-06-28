@@ -17,10 +17,9 @@ export async function POST(req){
       from: ADMIN_EMAIL,
       to: data.email,
       subject: "Hunting Coder - Feedback",
-      text: "Hello world",
       html: `<div>
-        <p>Name : ${data.name}</p>
-        <p>Message : ${data.message}</p>
+        <p>We value your feedback on our recent collaboration. Please take a moment to share your experience, highlighting areas of excellence and potential improvements. Your input is highly appreciated as we strive to deliver the best service possible. Thank you for your support.</p>
+        <p>From Hunting Coder community</P>
       </div>`
     })
     return new Response(JSON.stringify({success: true}))
