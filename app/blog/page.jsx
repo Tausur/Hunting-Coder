@@ -41,6 +41,13 @@ export default function Blogs() {
             className="w-full h-40 object-cover rounded-lg mb-4"
           />
           <h2 className="text-xl font-bold mb-2">{post.title}</h2>
+          <div className="flex flex-wrap space-x-2">
+          {post.tag.map((i)=>{
+            return(
+              <p className="pb-1 cursor-pointer text-sm text-gray-700">#{i}</p>
+            )
+          })}
+          </div>
           <div className="flex items-center pb-3 space-x-2">
             <BsFillCalendarEventFill className="text-zinc-800" />
             <p>{post.$createdAt.split("T")[0]}</p>

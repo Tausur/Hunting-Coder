@@ -25,7 +25,7 @@ const ContactPage = () => {
       {
         name: name,
         email: email,
-        message: message,
+        message: message
       }
     );
 
@@ -42,7 +42,7 @@ const ContactPage = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({name,email,message})
+      body: JSON.stringify({name, email, message})
     })
     setName("");
     setEmail("");
