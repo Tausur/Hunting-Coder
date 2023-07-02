@@ -29,6 +29,7 @@ export default function Blogs() {
       }
     );
   }, []);
+  var id = 1
   return (
     <div className="max-w-6xl grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto py-10 px-4 md:px-0">
       {blogPosts.map((post, index) => (
@@ -40,14 +41,15 @@ export default function Blogs() {
             height={100}
             className="w-full h-40 object-cover rounded-lg mb-4"
           />
-          <h2 className="text-xl font-bold mb-2">{post.title}</h2>
           <div className="flex flex-wrap space-x-2">
-          {post.tag.map((i)=>{
-            return(
-              <p className="pb-1 cursor-pointer text-sm text-gray-700">#{i}</p>
-            )
-          })}
+            {post.tag.map((i) => {
+              id += 1
+              return (
+                <Link href={`/category/${i}`} key={id} className="pb-1 cursor-pointer text-sm text-gray-700">#{i}</Link>
+              )
+            })}
           </div>
+          <h2 className="text-xl font-bold mb-2">{post.title}</h2>
           <div className="flex items-center pb-3 space-x-2">
             <BsFillCalendarEventFill className="text-zinc-800" />
             <p>{post.$createdAt.split("T")[0]}</p>
