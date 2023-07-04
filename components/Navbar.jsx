@@ -52,8 +52,8 @@ const MobileNavbar = () => {
               </svg>
             </button>
           </div>
-          <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex-shrink-0 flex items-center">
+          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div className="PC flex-shrink-0 flex items-center">
               <Link href={"/"} className="text-white text-lg font-bold">
                 Hunting Coder
               </Link>
@@ -79,7 +79,7 @@ const MobileNavbar = () => {
                   About
                 </Link>
                 <Link
-                  href="/"
+                  href="/works"
                   className="text-gray-300 duration-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Works
@@ -118,7 +118,7 @@ const MobileNavbar = () => {
             About
           </Link>
           <Link
-            href="/"
+            href="/works"
             className="text-gray-300 duration-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Works
