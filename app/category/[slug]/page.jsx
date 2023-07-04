@@ -2,6 +2,7 @@
 import { Client, Databases, ID, Query } from "appwrite";
 import { useState, useEffect } from "react";
 import Link from 'next/link'
+import { BsFillCalendarEventFill } from "react-icons/bs";
 
 const client = new Client();
 
@@ -29,7 +30,7 @@ const CategoryPage = ({ params }) => {
                         }
                     })
                 })
-				setPosts(blogs)
+						setPosts(blogs)
             },
             function(error) {
                 console.log(error)
@@ -46,13 +47,17 @@ const CategoryPage = ({ params }) => {
       </header>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Object.keys(posts)?.map((doc)=>{
+          {Object.keys(posts).reverse()?.map((doc)=>{
             return(
-              <div key={posts[doc].$id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div key={posts[doc].$id} className="bg-zinc-200 shadow-lg rounded-lg overflow-hidden">
               <img src={posts[doc].image} alt={posts[doc].title} className="w-full h-48 object-cover" />
-              <div className="p-6">
+              <div className="py-4 px-5">
+								<div className="flex items-center pb-3 space-x-2">
+            <BsFillCalendarEventFill className="text-zinc-800" />
+            <p>{posts[doc].$createdAt.split("T")[0]}</p>
+          </div>
                 <h2 className="text-xl font-semibold mb-2">{posts[doc].title}</h2>
-                <p className="text-gray-600">{posts[doc].excerpt}</p>
+                <p className="text-gray-600">{posts[doc].metadesc}...</p>
                 <Link href={`/blog/${doc}`} className="mt-4 inline-block bg-indigo-500 text-white px-4 py-2 rounded">
                   Read More
                 </Link>

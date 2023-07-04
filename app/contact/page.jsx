@@ -3,40 +3,14 @@
 import { useState } from "react";
 import { Client, Databases, ID } from "appwrite";
 
-const client = new Client();
-
-client
-  .setEndpoint(process.env.NEXT_PUBLIC_ENDPOINT)
-  .setProject(process.env.NEXT_PUBLIC_PROJECT);
-
 const ContactPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const databases = new Databases(client);
-
   const handleSubmit = async(e) => {
     e.preventDefault();
-    const promise = databases.createDocument(
-      process.env.NEXT_PUBLIC_FEEDBACK_DATABASE_ID,
-      process.env.NEXT_PUBLIC_FEEDBACK_COLLECTION_ID,
-      ID.unique(),
-      {
-        name: name,
-        email: email,
-        message: message
-      }
-    );
-
-    promise.then(
-      function (response) {
-        alert("Thanks for your contacting with us. Stay tuned!");
-      },
-      function (error) {
-        console.log(error); // Failure
-      }
-    );
+    alert("Thanks for your contacting with us. Stay tuned!");
     await fetch('/api/feedback', {
       method: 'POST',
       headers: {

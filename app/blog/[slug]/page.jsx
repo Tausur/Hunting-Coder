@@ -1,6 +1,5 @@
 "use client";
 
-import BlogPost from "@/components/Blogpost";
 import { Client, Databases, ID, Query } from "appwrite";
 import { useState, useEffect } from "react";
 
